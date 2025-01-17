@@ -1,4 +1,10 @@
-// Is a given value equal to null?
-export default function isNull(obj) {
-  return obj === null;
-}
+define(function () {
+
+  // Is a given value equal to null?
+  function isNull(obj) {
+    return obj === null;
+  }
+
+  return isNull;
+
+});

@@ -1,3 +1,7 @@
-import tagTester from './_tagTester.js';
+define(['./_tagTester'], function (_tagTester) {
 
-export default tagTester('Object');
+	var hasObjectTag = _tagTester('Object');
+
+	return hasObjectTag;
+
+});

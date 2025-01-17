@@ -1,4 +1,10 @@
-// Keep the identity function around for default iteratees.
-export default function identity(value) {
-  return value;
-}
+define(function () {
+
+  // Keep the identity function around for default iteratees.
+  function identity(value) {
+    return value;
+  }
+
+  return identity;
+
+});

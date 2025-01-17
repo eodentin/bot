@@ -1,10 +1,12 @@
-import isArrayLike from './_isArrayLike.js';
-import values from './values.js';
-import indexOf from './indexOf.js';
+define(['./_isArrayLike', './values', './indexOf'], function (_isArrayLike, values, indexOf) {
 
-// Determine if the array or object contains a given item (using `===`).
-export default function contains(obj, item, fromIndex, guard) {
-  if (!isArrayLike(obj)) obj = values(obj);
-  if (typeof fromIndex != 'number' || guard) fromIndex = 0;
-  return indexOf(obj, item, fromIndex) >= 0;
-}
+  // Determine if the array or object contains a given item (using `===`).
+  function contains(obj, item, fromIndex, guard) {
+    if (!_isArrayLike(obj)) obj = values(obj);
+    if (typeof fromIndex != 'number' || guard) fromIndex = 0;
+    return indexOf(obj, item, fromIndex) >= 0;
+  }
+
+  return contains;
+
+});

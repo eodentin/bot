@@ -1,6 +1,10 @@
-import { toString } from './_setup.js';
+define(['./_setup'], function (_setup) {
 
-// Is a given value a boolean?
-export default function isBoolean(obj) {
-  return obj === true || obj === false || toString.call(obj) === '[object Boolean]';
-}
+  // Is a given value a boolean?
+  function isBoolean(obj) {
+    return obj === true || obj === false || _setup.toString.call(obj) === '[object Boolean]';
+  }
+
+  return isBoolean;
+
+});

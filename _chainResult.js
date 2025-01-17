@@ -1,6 +1,10 @@
-import _ from './underscore.js';
+define(['./underscore'], function (underscore) {
 
-// Helper function to continue chaining intermediate results.
-export default function chainResult(instance, obj) {
-  return instance._chain ? _(obj).chain() : obj;
-}
+  // Helper function to continue chaining intermediate results.
+  function chainResult(instance, obj) {
+    return instance._chain ? underscore(obj).chain() : obj;
+  }
+
+  return chainResult;
+
+});

@@ -1,5 +1,8 @@
-import createAssigner from './_createAssigner.js';
-import allKeys from './allKeys.js';
+define(['./_createAssigner', './allKeys'], function (_createAssigner, allKeys) {
 
-// Fill in a given object with default properties.
-export default createAssigner(allKeys, true);
+	// Fill in a given object with default properties.
+	var defaults = _createAssigner(allKeys, true);
+
+	return defaults;
+
+});

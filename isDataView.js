@@ -1,14 +1,15 @@
-import tagTester from './_tagTester.js';
-import isFunction from './isFunction.js';
-import isArrayBuffer from './isArrayBuffer.js';
-import { hasStringTagBug } from './_stringTagBug.js';
+define(['./_tagTester', './isFunction', './isArrayBuffer', './_stringTagBug'], function (_tagTester, isFunction, isArrayBuffer, _stringTagBug) {
 
-var isDataView = tagTester('DataView');
+  var isDataView = _tagTester('DataView');
 
-// In IE 10 - Edge 13, we need a different heuristic
-// to determine whether an object is a `DataView`.
-function ie10IsDataView(obj) {
-  return obj != null && isFunction(obj.getInt8) && isArrayBuffer(obj.buffer);
-}
+  // In IE 10 - Edge 13, we need a different heuristic
+  // to determine whether an object is a `DataView`.
+  function ie10IsDataView(obj) {
+    return obj != null && isFunction(obj.getInt8) && isArrayBuffer(obj.buffer);
+  }
 
-export default (hasStringTagBug ? ie10IsDataView : isDataView);
+  var isDataView$1 = (_stringTagBug.hasStringTagBug ? ie10IsDataView : isDataView);
+
+  return isDataView$1;
+
+});

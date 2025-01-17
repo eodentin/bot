@@ -1,5 +1,7 @@
-import tagTester from './_tagTester.js';
-import { isIE11 } from './_stringTagBug.js';
-import { ie11fingerprint, mapMethods }  from './_methodFingerprint.js';
+define(['./_tagTester', './_stringTagBug', './_methodFingerprint'], function (_tagTester, _stringTagBug, _methodFingerprint) {
 
-export default isIE11 ? ie11fingerprint(mapMethods) : tagTester('Map');
+	var isMap = _stringTagBug.isIE11 ? _methodFingerprint.ie11fingerprint(_methodFingerprint.mapMethods) : _tagTester('Map');
+
+	return isMap;
+
+});

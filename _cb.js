@@ -1,10 +1,12 @@
-import _ from './underscore.js';
-import baseIteratee from './_baseIteratee.js';
-import iteratee from './iteratee.js';
+define(['./underscore', './_baseIteratee', './iteratee'], function (underscore, _baseIteratee, iteratee) {
 
-// The function we call internally to generate a callback. It invokes
-// `_.iteratee` if overridden, otherwise `baseIteratee`.
-export default function cb(value, context, argCount) {
-  if (_.iteratee !== iteratee) return _.iteratee(value, context);
-  return baseIteratee(value, context, argCount);
-}
+  // The function we call internally to generate a callback. It invokes
+  // `_.iteratee` if overridden, otherwise `baseIteratee`.
+  function cb(value, context, argCount) {
+    if (underscore.iteratee !== iteratee) return underscore.iteratee(value, context);
+    return _baseIteratee(value, context, argCount);
+  }
+
+  return cb;
+
+});

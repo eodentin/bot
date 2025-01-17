@@ -1,6 +1,9 @@
-import createSizePropertyCheck from './_createSizePropertyCheck.js';
-import getByteLength from './_getByteLength.js';
+define(['./_createSizePropertyCheck', './_getByteLength'], function (_createSizePropertyCheck, _getByteLength) {
 
-// Internal helper to determine whether we should spend extensive checks against
-// `ArrayBuffer` et al.
-export default createSizePropertyCheck(getByteLength);
+	// Internal helper to determine whether we should spend extensive checks against
+	// `ArrayBuffer` et al.
+	var isBufferLike = _createSizePropertyCheck(_getByteLength);
+
+	return isBufferLike;
+
+});

@@ -1,7 +1,10 @@
-import { _isNaN } from './_setup.js';
-import isNumber from './isNumber.js';
+define(['./_setup', './isNumber'], function (_setup, isNumber) {
 
-// Is the given value `NaN`?
-export default function isNaN(obj) {
-  return isNumber(obj) && _isNaN(obj);
-}
+  // Is the given value `NaN`?
+  function isNaN(obj) {
+    return isNumber(obj) && _setup._isNaN(obj);
+  }
+
+  return isNaN;
+
+});

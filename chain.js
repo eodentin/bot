@@ -1,8 +1,12 @@
-import _ from './underscore.js';
+define(['./underscore'], function (underscore) {
 
-// Start chaining a wrapped Underscore object.
-export default function chain(obj) {
-  var instance = _(obj);
-  instance._chain = true;
-  return instance;
-}
+  // Start chaining a wrapped Underscore object.
+  function chain(obj) {
+    var instance = underscore(obj);
+    instance._chain = true;
+    return instance;
+  }
+
+  return chain;
+
+});

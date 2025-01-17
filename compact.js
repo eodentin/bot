@@ -1,6 +1,10 @@
-import filter from './filter.js';
+define(['./filter'], function (filter) {
 
-// Trim out all falsy values from an array.
-export default function compact(array) {
-  return filter(array, Boolean);
-}
+  // Trim out all falsy values from an array.
+  function compact(array) {
+    return filter(array, Boolean);
+  }
+
+  return compact;
+
+});

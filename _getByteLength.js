@@ -1,4 +1,8 @@
-import shallowProperty from './_shallowProperty.js';
+define(['./_shallowProperty'], function (_shallowProperty) {
 
-// Internal helper to obtain the `byteLength` property of an object.
-export default shallowProperty('byteLength');
+	// Internal helper to obtain the `byteLength` property of an object.
+	var getByteLength = _shallowProperty('byteLength');
+
+	return getByteLength;
+
+});

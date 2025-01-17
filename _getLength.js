@@ -1,4 +1,8 @@
-import shallowProperty from './_shallowProperty.js';
+define(['./_shallowProperty'], function (_shallowProperty) {
 
-// Internal helper to obtain the `length` property of an object.
-export default shallowProperty('length');
+	// Internal helper to obtain the `length` property of an object.
+	var getLength = _shallowProperty('length');
+
+	return getLength;
+
+});

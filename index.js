@@ -1,200 +1,154 @@
-// Named Exports
-// =============
+define(['exports', './_setup', './restArguments', './isObject', './isNull', './isUndefined', './isBoolean', './isElement', './isString', './isNumber', './isDate', './isRegExp', './isError', './isSymbol', './isArrayBuffer', './isDataView', './isArray', './isFunction', './isArguments', './isFinite', './isNaN', './isTypedArray', './isEmpty', './isMatch', './isEqual', './isMap', './isWeakMap', './isSet', './isWeakSet', './keys', './allKeys', './values', './pairs', './invert', './functions', './extend', './extendOwn', './defaults', './create', './clone', './tap', './get', './has', './mapObject', './identity', './constant', './noop', './toPath', './property', './propertyOf', './matcher', './times', './random', './now', './escape', './unescape', './templateSettings', './template', './result', './uniqueId', './chain', './iteratee', './partial', './bind', './bindAll', './memoize', './delay', './defer', './throttle', './debounce', './wrap', './negate', './compose', './after', './before', './once', './findKey', './findIndex', './findLastIndex', './sortedIndex', './indexOf', './lastIndexOf', './find', './findWhere', './each', './map', './reduce', './reduceRight', './filter', './reject', './every', './some', './contains', './invoke', './pluck', './where', './max', './min', './shuffle', './sample', './sortBy', './groupBy', './indexBy', './countBy', './partition', './toArray', './size', './pick', './omit', './first', './initial', './last', './rest', './compact', './flatten', './without', './uniq', './union', './intersection', './difference', './unzip', './zip', './object', './range', './chunk', './mixin', './underscore-array-methods', './underscore'], function (exports, _setup, restArguments, isObject, isNull, isUndefined, isBoolean, isElement, isString, isNumber, isDate, isRegExp, isError, isSymbol, isArrayBuffer, isDataView, isArray, isFunction, isArguments, _isFinite, _isNaN, isTypedArray, isEmpty, isMatch, isEqual, isMap, isWeakMap, isSet, isWeakSet, keys, allKeys, values, pairs, invert, functions, extend, extendOwn, defaults, create, clone, tap, get, has, mapObject, identity, constant, noop, toPath, property, propertyOf, matcher, times, random, now, _escape, _unescape, templateSettings, template, result, uniqueId, chain, iteratee, partial, bind, bindAll, memoize, delay, defer, throttle, debounce, wrap, negate, compose, after, before, once, findKey, findIndex, findLastIndex, sortedIndex, indexOf, lastIndexOf, find, findWhere, each, map, reduce, reduceRight, filter, reject, every, some, contains, invoke, pluck, where, max, min, shuffle, sample, sortBy, groupBy, indexBy, countBy, partition, toArray, size, pick, omit, first, initial, last, rest, compact, flatten, without, uniq, union, intersection, difference, unzip, zip, object, range, chunk, mixin, underscoreArrayMethods, underscore) {
 
-//     Underscore.js 1.13.4
-//     https://underscorejs.org
-//     (c) 2009-2022 Jeremy Ashkenas, Julian Gonggrijp, and DocumentCloud and Investigative Reporters & Editors
-//     Underscore may be freely distributed under the MIT license.
+         // Named Exports
 
-// Baseline setup.
-export { VERSION } from './_setup.js';
-export { default as restArguments } from './restArguments.js';
+         exports.VERSION = _setup.VERSION;
+         exports.restArguments = restArguments;
+         exports.isObject = isObject;
+         exports.isNull = isNull;
+         exports.isUndefined = isUndefined;
+         exports.isBoolean = isBoolean;
+         exports.isElement = isElement;
+         exports.isString = isString;
+         exports.isNumber = isNumber;
+         exports.isDate = isDate;
+         exports.isRegExp = isRegExp;
+         exports.isError = isError;
+         exports.isSymbol = isSymbol;
+         exports.isArrayBuffer = isArrayBuffer;
+         exports.isDataView = isDataView;
+         exports.isArray = isArray;
+         exports.isFunction = isFunction;
+         exports.isArguments = isArguments;
+         exports.isFinite = _isFinite;
+         exports.isNaN = _isNaN;
+         exports.isTypedArray = isTypedArray;
+         exports.isEmpty = isEmpty;
+         exports.isMatch = isMatch;
+         exports.isEqual = isEqual;
+         exports.isMap = isMap;
+         exports.isWeakMap = isWeakMap;
+         exports.isSet = isSet;
+         exports.isWeakSet = isWeakSet;
+         exports.keys = keys;
+         exports.allKeys = allKeys;
+         exports.values = values;
+         exports.pairs = pairs;
+         exports.invert = invert;
+         exports.functions = functions;
+         exports.methods = functions;
+         exports.extend = extend;
+         exports.assign = extendOwn;
+         exports.extendOwn = extendOwn;
+         exports.defaults = defaults;
+         exports.create = create;
+         exports.clone = clone;
+         exports.tap = tap;
+         exports.get = get;
+         exports.has = has;
+         exports.mapObject = mapObject;
+         exports.identity = identity;
+         exports.constant = constant;
+         exports.noop = noop;
+         exports.toPath = toPath;
+         exports.property = property;
+         exports.propertyOf = propertyOf;
+         exports.matcher = matcher;
+         exports.matches = matcher;
+         exports.times = times;
+         exports.random = random;
+         exports.now = now;
+         exports.escape = _escape;
+         exports.unescape = _unescape;
+         exports.templateSettings = templateSettings;
+         exports.template = template;
+         exports.result = result;
+         exports.uniqueId = uniqueId;
+         exports.chain = chain;
+         exports.iteratee = iteratee;
+         exports.partial = partial;
+         exports.bind = bind;
+         exports.bindAll = bindAll;
+         exports.memoize = memoize;
+         exports.delay = delay;
+         exports.defer = defer;
+         exports.throttle = throttle;
+         exports.debounce = debounce;
+         exports.wrap = wrap;
+         exports.negate = negate;
+         exports.compose = compose;
+         exports.after = after;
+         exports.before = before;
+         exports.once = once;
+         exports.findKey = findKey;
+         exports.findIndex = findIndex;
+         exports.findLastIndex = findLastIndex;
+         exports.sortedIndex = sortedIndex;
+         exports.indexOf = indexOf;
+         exports.lastIndexOf = lastIndexOf;
+         exports.detect = find;
+         exports.find = find;
+         exports.findWhere = findWhere;
+         exports.each = each;
+         exports.forEach = each;
+         exports.collect = map;
+         exports.map = map;
+         exports.foldl = reduce;
+         exports.inject = reduce;
+         exports.reduce = reduce;
+         exports.foldr = reduceRight;
+         exports.reduceRight = reduceRight;
+         exports.filter = filter;
+         exports.select = filter;
+         exports.reject = reject;
+         exports.all = every;
+         exports.every = every;
+         exports.any = some;
+         exports.some = some;
+         exports.contains = contains;
+         exports.include = contains;
+         exports.includes = contains;
+         exports.invoke = invoke;
+         exports.pluck = pluck;
+         exports.where = where;
+         exports.max = max;
+         exports.min = min;
+         exports.shuffle = shuffle;
+         exports.sample = sample;
+         exports.sortBy = sortBy;
+         exports.groupBy = groupBy;
+         exports.indexBy = indexBy;
+         exports.countBy = countBy;
+         exports.partition = partition;
+         exports.toArray = toArray;
+         exports.size = size;
+         exports.pick = pick;
+         exports.omit = omit;
+         exports.first = first;
+         exports.head = first;
+         exports.take = first;
+         exports.initial = initial;
+         exports.last = last;
+         exports.drop = rest;
+         exports.rest = rest;
+         exports.tail = rest;
+         exports.compact = compact;
+         exports.flatten = flatten;
+         exports.without = without;
+         exports.uniq = uniq;
+         exports.unique = uniq;
+         exports.union = union;
+         exports.intersection = intersection;
+         exports.difference = difference;
+         exports.transpose = unzip;
+         exports.unzip = unzip;
+         exports.zip = zip;
+         exports.object = object;
+         exports.range = range;
+         exports.chunk = chunk;
+         exports.mixin = mixin;
+         exports.default = underscore;
 
-// Object Functions
-// ----------------
-// Our most fundamental functions operate on any JavaScript object.
-// Most functions in Underscore depend on at least one function in this section.
+         Object.defineProperty(exports, '__esModule', { value: true });
 
-// A group of functions that check the types of core JavaScript values.
-// These are often informally referred to as the "isType" functions.
-export { default as isObject } from './isObject.js';
-export { default as isNull } from './isNull.js';
-export { default as isUndefined } from './isUndefined.js';
-export { default as isBoolean } from './isBoolean.js';
-export { default as isElement } from './isElement.js';
-export { default as isString } from './isString.js';
-export { default as isNumber } from './isNumber.js';
-export { default as isDate } from './isDate.js';
-export { default as isRegExp } from './isRegExp.js';
-export { default as isError } from './isError.js';
-export { default as isSymbol } from './isSymbol.js';
-export { default as isArrayBuffer } from './isArrayBuffer.js';
-export { default as isDataView } from './isDataView.js';
-export { default as isArray } from './isArray.js';
-export { default as isFunction } from './isFunction.js';
-export { default as isArguments } from './isArguments.js';
-export { default as isFinite } from './isFinite.js';
-export { default as isNaN } from './isNaN.js';
-export { default as isTypedArray } from './isTypedArray.js';
-export { default as isEmpty } from './isEmpty.js';
-export { default as isMatch } from './isMatch.js';
-export { default as isEqual } from './isEqual.js';
-export { default as isMap } from './isMap.js';
-export { default as isWeakMap } from './isWeakMap.js';
-export { default as isSet } from './isSet.js';
-export { default as isWeakSet } from './isWeakSet.js';
-
-// Functions that treat an object as a dictionary of key-value pairs.
-export { default as keys } from './keys.js';
-export { default as allKeys } from './allKeys.js';
-export { default as values } from './values.js';
-export { default as pairs } from './pairs.js';
-export { default as invert } from './invert.js';
-export { default as functions,
-         default as methods   } from './functions.js';
-export { default as extend } from './extend.js';
-export { default as extendOwn,
-         default as assign    } from './extendOwn.js';
-export { default as defaults } from './defaults.js';
-export { default as create } from './create.js';
-export { default as clone } from './clone.js';
-export { default as tap } from './tap.js';
-export { default as get } from './get.js';
-export { default as has } from './has.js';
-export { default as mapObject } from './mapObject.js';
-
-// Utility Functions
-// -----------------
-// A bit of a grab bag: Predicate-generating functions for use with filters and
-// loops, string escaping and templating, create random numbers and unique ids,
-// and functions that facilitate Underscore's chaining and iteration conventions.
-export { default as identity } from './identity.js';
-export { default as constant } from './constant.js';
-export { default as noop } from './noop.js';
-export { default as toPath } from './toPath.js';
-export { default as property } from './property.js';
-export { default as propertyOf } from './propertyOf.js';
-export { default as matcher,
-         default as matches } from './matcher.js';
-export { default as times } from './times.js';
-export { default as random } from './random.js';
-export { default as now } from './now.js';
-export { default as escape } from './escape.js';
-export { default as unescape } from './unescape.js';
-export { default as templateSettings } from './templateSettings.js';
-export { default as template } from './template.js';
-export { default as result } from './result.js';
-export { default as uniqueId } from './uniqueId.js';
-export { default as chain } from './chain.js';
-export { default as iteratee } from './iteratee.js';
-
-// Function (ahem) Functions
-// -------------------------
-// These functions take a function as an argument and return a new function
-// as the result. Also known as higher-order functions.
-export { default as partial } from './partial.js';
-export { default as bind } from './bind.js';
-export { default as bindAll } from './bindAll.js';
-export { default as memoize } from './memoize.js';
-export { default as delay } from './delay.js';
-export { default as defer } from './defer.js';
-export { default as throttle } from './throttle.js';
-export { default as debounce } from './debounce.js';
-export { default as wrap } from './wrap.js';
-export { default as negate } from './negate.js';
-export { default as compose } from './compose.js';
-export { default as after } from './after.js';
-export { default as before } from './before.js';
-export { default as once } from './once.js';
-
-// Finders
-// -------
-// Functions that extract (the position of) a single element from an object
-// or array based on some criterion.
-export { default as findKey } from './findKey.js';
-export { default as findIndex } from './findIndex.js';
-export { default as findLastIndex } from './findLastIndex.js';
-export { default as sortedIndex } from './sortedIndex.js';
-export { default as indexOf } from './indexOf.js';
-export { default as lastIndexOf } from './lastIndexOf.js';
-export { default as find,
-         default as detect } from './find.js';
-export { default as findWhere } from './findWhere.js';
-
-// Collection Functions
-// --------------------
-// Functions that work on any collection of elements: either an array, or
-// an object of key-value pairs.
-export { default as each,
-         default as forEach } from './each.js';
-export { default as map,
-         default as collect } from './map.js';
-export { default as reduce,
-         default as foldl,
-         default as inject } from './reduce.js';
-export { default as reduceRight,
-         default as foldr       } from './reduceRight.js';
-export { default as filter,
-         default as select } from './filter.js';
-export { default as reject } from './reject.js';
-export { default as every,
-         default as all   } from './every.js';
-export { default as some,
-         default as any  } from './some.js';
-export { default as contains,
-         default as includes,
-         default as include  } from './contains.js';
-export { default as invoke } from './invoke.js';
-export { default as pluck } from './pluck.js';
-export { default as where } from './where.js';
-export { default as max } from './max.js';
-export { default as min } from './min.js';
-export { default as shuffle } from './shuffle.js';
-export { default as sample } from './sample.js';
-export { default as sortBy } from './sortBy.js';
-export { default as groupBy } from './groupBy.js';
-export { default as indexBy } from './indexBy.js';
-export { default as countBy } from './countBy.js';
-export { default as partition } from './partition.js';
-export { default as toArray } from './toArray.js';
-export { default as size } from './size.js';
-
-// `_.pick` and `_.omit` are actually object functions, but we put
-// them here in order to create a more natural reading order in the
-// monolithic build as they depend on `_.contains`.
-export { default as pick } from './pick.js';
-export { default as omit } from './omit.js';
-
-// Array Functions
-// ---------------
-// Functions that operate on arrays (and array-likes) only, because they’re
-// expressed in terms of operations on an ordered list of values.
-export { default as first,
-         default as head,
-         default as take  } from './first.js';
-export { default as initial } from './initial.js';
-export { default as last } from './last.js';
-export { default as rest,
-         default as tail,
-         default as drop } from './rest.js';
-export { default as compact } from './compact.js';
-export { default as flatten } from './flatten.js';
-export { default as without } from './without.js';
-export { default as uniq,
-         default as unique } from './uniq.js';
-export { default as union } from './union.js';
-export { default as intersection } from './intersection.js';
-export { default as difference } from './difference.js';
-export { default as unzip,
-         default as transpose } from './unzip.js';
-export { default as zip } from './zip.js';
-export { default as object } from './object.js';
-export { default as range } from './range.js';
-export { default as chunk } from './chunk.js';
-
-// OOP
-// ---
-// These modules support the "object-oriented" calling style. See also
-// `underscore.js` and `index-default.js`.
-export { default as mixin } from './mixin.js';
-export { default } from './underscore-array-methods.js';
+});
