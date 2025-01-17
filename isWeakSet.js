@@ -1,7 +1,5 @@
-define(['./_tagTester'], function (_tagTester) {
+var convert = require('./convert'),
+    func = convert('isWeakSet', require('../isWeakSet'), require('./_falseOptions'));
 
-	var isWeakSet = _tagTester('WeakSet');
-
-	return isWeakSet;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

@@ -1,8 +1,5 @@
-define(['./_createPredicateIndexFinder'], function (_createPredicateIndexFinder) {
+var convert = require('./convert'),
+    func = convert('findLastIndex', require('../findLastIndex'));
 
-	// Returns the last index on an array-like that passes a truth test.
-	var findLastIndex = _createPredicateIndexFinder(-1);
-
-	return findLastIndex;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

@@ -1,10 +1,5 @@
-define(['./_setup', './isNumber'], function (_setup, isNumber) {
+var convert = require('./convert'),
+    func = convert('isNaN', require('../isNaN'), require('./_falseOptions'));
 
-  // Is the given value `NaN`?
-  function isNaN(obj) {
-    return isNumber(obj) && _setup._isNaN(obj);
-  }
-
-  return isNaN;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

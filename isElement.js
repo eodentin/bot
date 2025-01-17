@@ -1,10 +1,5 @@
-define(function () {
+var convert = require('./convert'),
+    func = convert('isElement', require('../isElement'), require('./_falseOptions'));
 
-  // Is a given value a DOM element?
-  function isElement(obj) {
-    return !!(obj && obj.nodeType === 1);
-  }
-
-  return isElement;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

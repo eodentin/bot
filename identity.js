@@ -1,10 +1,5 @@
-define(function () {
+var convert = require('./convert'),
+    func = convert('identity', require('../identity'), require('./_falseOptions'));
 
-  // Keep the identity function around for default iteratees.
-  function identity(value) {
-    return value;
-  }
-
-  return identity;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

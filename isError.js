@@ -1,7 +1,5 @@
-define(['./_tagTester'], function (_tagTester) {
+var convert = require('./convert'),
+    func = convert('isError', require('../isError'), require('./_falseOptions'));
 
-	var isError = _tagTester('Error');
-
-	return isError;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

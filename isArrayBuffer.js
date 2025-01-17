@@ -1,7 +1,5 @@
-define(['./_tagTester'], function (_tagTester) {
+var convert = require('./convert'),
+    func = convert('isArrayBuffer', require('../isArrayBuffer'), require('./_falseOptions'));
 
-	var isArrayBuffer = _tagTester('ArrayBuffer');
-
-	return isArrayBuffer;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

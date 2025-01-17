@@ -1,7 +1,5 @@
-define(['./_tagTester'], function (_tagTester) {
+var convert = require('./convert'),
+    func = convert('isDate', require('../isDate'), require('./_falseOptions'));
 
-	var isDate = _tagTester('Date');
-
-	return isDate;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

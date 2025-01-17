@@ -1,10 +1,5 @@
-define(function () {
+var convert = require('./convert'),
+    func = convert('isNull', require('../isNull'), require('./_falseOptions'));
 
-  // Is a given value equal to null?
-  function isNull(obj) {
-    return obj === null;
-  }
-
-  return isNull;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

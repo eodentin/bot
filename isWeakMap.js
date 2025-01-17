@@ -1,7 +1,5 @@
-define(['./_tagTester', './_stringTagBug', './_methodFingerprint'], function (_tagTester, _stringTagBug, _methodFingerprint) {
+var convert = require('./convert'),
+    func = convert('isWeakMap', require('../isWeakMap'), require('./_falseOptions'));
 
-	var isWeakMap = _stringTagBug.isIE11 ? _methodFingerprint.ie11fingerprint(_methodFingerprint.weakMapMethods) : _tagTester('WeakMap');
-
-	return isWeakMap;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

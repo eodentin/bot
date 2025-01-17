@@ -1,14 +1,5 @@
-define(['./isFunction'], function (isFunction) {
+var convert = require('./convert'),
+    func = convert('functions', require('../functions'), require('./_falseOptions'));
 
-  // Return a sorted list of the function names available on the object.
-  function functions(obj) {
-    var names = [];
-    for (var key in obj) {
-      if (isFunction(obj[key])) names.push(key);
-    }
-    return names.sort();
-  }
-
-  return functions;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

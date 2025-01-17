@@ -1,7 +1,5 @@
-define(['./_tagTester'], function (_tagTester) {
+var convert = require('./convert'),
+    func = convert('isSymbol', require('../isSymbol'), require('./_falseOptions'));
 
-	var isSymbol = _tagTester('Symbol');
-
-	return isSymbol;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

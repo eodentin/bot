@@ -1,9 +1,5 @@
-define(['./_setup', './_tagTester'], function (_setup, _tagTester) {
+var convert = require('./convert'),
+    func = convert('isArray', require('../isArray'), require('./_falseOptions'));
 
-	// Is a given value an array?
-	// Delegates to ECMA5's native `Array.isArray`.
-	var isArray = _setup.nativeIsArray || _tagTester('Array');
-
-	return isArray;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

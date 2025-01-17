@@ -1,7 +1,5 @@
-define(['./_tagTester'], function (_tagTester) {
+var convert = require('./convert'),
+    func = convert('isNumber', require('../isNumber'), require('./_falseOptions'));
 
-	var isNumber = _tagTester('Number');
-
-	return isNumber;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

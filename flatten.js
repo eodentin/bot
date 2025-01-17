@@ -1,11 +1,5 @@
-define(['./_flatten'], function (_flatten) {
+var convert = require('./convert'),
+    func = convert('flatten', require('../flatten'), require('./_falseOptions'));
 
-  // Flatten out an array, either recursively (by default), or up to `depth`.
-  // Passing `true` or `false` as `depth` means `1` or `Infinity`, respectively.
-  function flatten(array, depth) {
-    return _flatten(array, depth, false);
-  }
-
-  return flatten;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

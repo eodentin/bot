@@ -1,8 +1,5 @@
-define(['./_createPredicateIndexFinder'], function (_createPredicateIndexFinder) {
+var convert = require('./convert'),
+    func = convert('findIndex', require('../findIndex'));
 
-	// Returns the first index on an array-like that passes a truth test.
-	var findIndex = _createPredicateIndexFinder(1);
-
-	return findIndex;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

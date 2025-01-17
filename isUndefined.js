@@ -1,10 +1,5 @@
-define(function () {
+var convert = require('./convert'),
+    func = convert('isUndefined', require('../isUndefined'), require('./_falseOptions'));
 
-  // Is a given variable undefined?
-  function isUndefined(obj) {
-    return obj === void 0;
-  }
-
-  return isUndefined;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

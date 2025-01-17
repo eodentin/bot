@@ -1,10 +1,5 @@
-define(['./_setup'], function (_setup) {
+var convert = require('./convert'),
+    func = convert('isBoolean', require('../isBoolean'), require('./_falseOptions'));
 
-  // Is a given value a boolean?
-  function isBoolean(obj) {
-    return obj === true || obj === false || _setup.toString.call(obj) === '[object Boolean]';
-  }
-
-  return isBoolean;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;
