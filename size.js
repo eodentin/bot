@@ -1,8 +1,11 @@
-import isArrayLike from './_isArrayLike.js';
-import keys from './keys.js';
+define(['./_isArrayLike', './keys'], function (_isArrayLike, keys) {
 
-// Return the number of elements in a collection.
-export default function size(obj) {
-  if (obj == null) return 0;
-  return isArrayLike(obj) ? obj.length : keys(obj).length;
-}
+  // Return the number of elements in a collection.
+  function size(obj) {
+    if (obj == null) return 0;
+    return _isArrayLike(obj) ? obj.length : keys(obj).length;
+  }
+
+  return size;
+
+});

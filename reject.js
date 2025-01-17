@@ -1,8 +1,10 @@
-import filter from './filter.js';
-import negate from './negate.js';
-import cb from './_cb.js';
+define(['./filter', './negate', './_cb'], function (filter, negate, _cb) {
 
-// Return all the elements for which a truth test fails.
-export default function reject(obj, predicate, context) {
-  return filter(obj, negate(cb(predicate)), context);
-}
+  // Return all the elements for which a truth test fails.
+  function reject(obj, predicate, context) {
+    return filter(obj, negate(_cb(predicate)), context);
+  }
+
+  return reject;
+
+});

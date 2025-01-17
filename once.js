@@ -1,6 +1,9 @@
-import partial from './partial.js';
-import before from './before.js';
+define(['./partial', './before'], function (partial, before) {
 
-// Returns a function that will be executed at most one time, no matter how
-// often you call it. Useful for lazy initialization.
-export default partial(before, 2);
+	// Returns a function that will be executed at most one time, no matter how
+	// often you call it. Useful for lazy initialization.
+	var once = partial(before, 2);
+
+	return once;
+
+});

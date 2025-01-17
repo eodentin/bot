@@ -1,5 +1,8 @@
-import createEscaper from './_createEscaper.js';
-import unescapeMap from './_unescapeMap.js';
+define(['./_createEscaper', './_unescapeMap'], function (_createEscaper, _unescapeMap) {
 
-// Function for unescaping strings from HTML interpolation.
-export default createEscaper(unescapeMap);
+	// Function for unescaping strings from HTML interpolation.
+	var _unescape = _createEscaper(_unescapeMap);
+
+	return _unescape;
+
+});

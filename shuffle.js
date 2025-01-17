@@ -1,6 +1,10 @@
-import sample from './sample.js';
+define(['./sample'], function (sample) {
 
-// Shuffle a collection.
-export default function shuffle(obj) {
-  return sample(obj, Infinity);
-}
+  // Shuffle a collection.
+  function shuffle(obj) {
+    return sample(obj, Infinity);
+  }
+
+  return shuffle;
+
+});

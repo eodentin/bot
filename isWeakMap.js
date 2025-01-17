@@ -1,5 +1,7 @@
-import tagTester from './_tagTester.js';
-import { isIE11 } from './_stringTagBug.js';
-import { ie11fingerprint, weakMapMethods }  from './_methodFingerprint.js';
+define(['./_tagTester', './_stringTagBug', './_methodFingerprint'], function (_tagTester, _stringTagBug, _methodFingerprint) {
 
-export default isIE11 ? ie11fingerprint(weakMapMethods) : tagTester('WeakMap');
+	var isWeakMap = _stringTagBug.isIE11 ? _methodFingerprint.ie11fingerprint(_methodFingerprint.weakMapMethods) : _tagTester('WeakMap');
+
+	return isWeakMap;
+
+});

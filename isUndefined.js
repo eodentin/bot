@@ -1,4 +1,10 @@
-// Is a given variable undefined?
-export default function isUndefined(obj) {
-  return obj === void 0;
-}
+define(function () {
+
+  // Is a given variable undefined?
+  function isUndefined(obj) {
+    return obj === void 0;
+  }
+
+  return isUndefined;
+
+});
