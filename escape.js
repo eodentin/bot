@@ -1,8 +1,5 @@
-define(['./_createEscaper', './_escapeMap'], function (_createEscaper, _escapeMap) {
+var convert = require('./convert'),
+    func = convert('escape', require('../escape'), require('./_falseOptions'));
 
-	// Function for escaping strings to HTML interpolation.
-	var _escape = _createEscaper(_escapeMap);
-
-	return _escape;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

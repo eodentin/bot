@@ -1,10 +1,5 @@
-define(['./filter'], function (filter) {
+var convert = require('./convert'),
+    func = convert('compact', require('../compact'), require('./_falseOptions'));
 
-  // Trim out all falsy values from an array.
-  function compact(array) {
-    return filter(array, Boolean);
-  }
-
-  return compact;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

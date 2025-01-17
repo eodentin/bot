@@ -1,11 +1,5 @@
-define(['./isObject', './isArray', './extend'], function (isObject, isArray, extend) {
+var convert = require('./convert'),
+    func = convert('clone', require('../clone'), require('./_falseOptions'));
 
-  // Create a (shallow-cloned) duplicate of an object.
-  function clone(obj) {
-    if (!isObject(obj)) return obj;
-    return isArray(obj) ? obj.slice() : extend({}, obj);
-  }
-
-  return clone;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

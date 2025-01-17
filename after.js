@@ -1,14 +1,5 @@
-define(function () {
+var convert = require('./convert'),
+    func = convert('after', require('../after'));
 
-  // Returns a function that will only be executed on and after the Nth call.
-  function after(times, func) {
-    return function() {
-      if (--times < 1) {
-        return func.apply(this, arguments);
-      }
-    };
-  }
-
-  return after;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

@@ -1,12 +1,5 @@
-define(function () {
+var convert = require('./convert'),
+    func = convert('constant', require('../constant'), require('./_falseOptions'));
 
-  // Predicate-generating function. Often useful outside of Underscore.
-  function constant(value) {
-    return function() {
-      return value;
-    };
-  }
-
-  return constant;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

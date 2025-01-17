@@ -1,8 +1,5 @@
-define(['./_createAssigner', './allKeys'], function (_createAssigner, allKeys) {
+var convert = require('./convert'),
+    func = convert('defaults', require('../defaults'));
 
-	// Fill in a given object with default properties.
-	var defaults = _createAssigner(allKeys, true);
-
-	return defaults;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

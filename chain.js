@@ -1,12 +1,5 @@
-define(['./underscore'], function (underscore) {
+var convert = require('./convert'),
+    func = convert('chain', require('../chain'), require('./_falseOptions'));
 
-  // Start chaining a wrapped Underscore object.
-  function chain(obj) {
-    var instance = underscore(obj);
-    instance._chain = true;
-    return instance;
-  }
-
-  return chain;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;
