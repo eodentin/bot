@@ -1,12 +1,5 @@
-define(function () {
+var convert = require('./convert'),
+    func = convert('negate', require('../negate'), require('./_falseOptions'));
 
-  // Returns a negated version of the passed-in predicate.
-  function negate(predicate) {
-    return function() {
-      return !predicate.apply(this, arguments);
-    };
-  }
-
-  return negate;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

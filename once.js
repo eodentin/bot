@@ -1,9 +1,5 @@
-define(['./partial', './before'], function (partial, before) {
+var convert = require('./convert'),
+    func = convert('once', require('../once'), require('./_falseOptions'));
 
-	// Returns a function that will be executed at most one time, no matter how
-	// often you call it. Useful for lazy initialization.
-	var once = partial(before, 2);
-
-	return once;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

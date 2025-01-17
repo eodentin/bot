@@ -1,13 +1,5 @@
-define(['./noop', './get'], function (noop, get) {
+var convert = require('./convert'),
+    func = convert('propertyOf', require('../get'));
 
-  // Generates a function for a given object that returns a given property.
-  function propertyOf(obj) {
-    if (obj == null) return noop;
-    return function(path) {
-      return get(obj, path);
-    };
-  }
-
-  return propertyOf;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

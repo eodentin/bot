@@ -1,8 +1,5 @@
-define(['./_createReduce'], function (_createReduce) {
+var convert = require('./convert'),
+    func = convert('reduceRight', require('../reduceRight'));
 
-	// The right-associative version of reduce, also known as `foldr`.
-	var reduceRight = _createReduce(-1);
-
-	return reduceRight;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

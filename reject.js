@@ -1,10 +1,5 @@
-define(['./filter', './negate', './_cb'], function (filter, negate, _cb) {
+var convert = require('./convert'),
+    func = convert('reject', require('../reject'));
 
-  // Return all the elements for which a truth test fails.
-  function reject(obj, predicate, context) {
-    return filter(obj, negate(_cb(predicate)), context);
-  }
-
-  return reject;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

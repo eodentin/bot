@@ -1,8 +1,5 @@
-define(function () {
+var convert = require('./convert'),
+    func = convert('noop', require('../noop'), require('./_falseOptions'));
 
-	// Predicate-generating function. Often useful outside of Underscore.
-	function noop(){}
-
-	return noop;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;

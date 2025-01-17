@@ -1,13 +1,5 @@
-define(['./rest'], function (rest) {
+var convert = require('./convert'),
+    func = convert('last', require('../last'), require('./_falseOptions'));
 
-  // Get the last element of an array. Passing **n** will return the last N
-  // values in the array.
-  function last(array, n, guard) {
-    if (array == null || array.length < 1) return n == null || guard ? void 0 : [];
-    if (n == null || guard) return array[array.length - 1];
-    return rest(array, Math.max(0, array.length - n));
-  }
-
-  return last;
-
-});
+func.placeholder = require('./placeholder');
+module.exports = func;
